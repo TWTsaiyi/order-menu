@@ -1,35 +1,26 @@
 function generateReceipt() {
-    const dish1Qty = document.getElementById("dish1-qty").value;
-    const dish2Qty = document.getElementById("dish2-qty").value;
+    console.log("Generate Receipt function triggered.");
 
-    const dish1Price = 10;
-    const dish2Price = 8;
+    const instrument1 = document.getElementById("instrument1").value;
+    console.log("Selected instrument:", instrument1);
 
-    let total = 0;
-    let receiptText = "<h2>收據</h2><ul>";
+    const quantity1 = document.getElementById("quantity1").value;
+    console.log("Selected quantity:", quantity1);
 
-    if (dish1Qty > 0) {
-        const dish1Total = dish1Qty * dish1Price;
-        receiptText += `<li>炒飯 (${dish1Qty} 份): $${dish1Total}</li>`;
-        total += dish1Total;
+    const price1 = document.getElementById("price1").value;
+    console.log("Entered price:", price1);
+
+    if (quantity1 > 0 && price1 > 0) {
+        const itemTotal = quantity1 * price1;
+        console.log("Item total:", itemTotal);
+
+        let receiptText = "<h2>收據</h2><ul>";
+        receiptText += `<li>${instrument1} (${quantity1} 份): $${itemTotal}</li>`;
+        receiptText += `</ul><h3>總計: $${itemTotal}</h3>`;
+
+        document.getElementById("receipt").innerHTML = receiptText;
+        console.log("Receipt generated.");
+    } else {
+        console.log("Invalid quantity or price.");
     }
-
-    if (dish2Qty > 0) {
-        const dish2Total = dish2Qty * dish2Price;
-        receiptText += `<li>麵條 (${dish2Qty} 份): $${dish2Total}</li>`;
-        total += dish2Total;
-    }
-
-    receiptText += `</ul><h3>總計: $${total}</h3>`;
-
-    document.getElementById("receipt").innerHTML = receiptText;
-}
-
-function printReceipt() {
-    const receiptContent = document.getElementById("receipt").innerHTML;
-    const originalContent = document.body.innerHTML;
-
-    document.body.innerHTML = receiptContent;
-    window.print();
-    document.body.innerHTML = originalContent;
 }
