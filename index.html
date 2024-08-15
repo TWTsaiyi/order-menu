@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>對帳單表單</title>
+    <title>對帳單</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fdf5e6;
             margin: 20px;
+            background-color: #f9f9f9;
         }
         .container {
             max-width: 1200px;
@@ -31,7 +31,7 @@
         input[type="text"], input[type="number"], input[type="date"], select {
             padding: 8px;
             margin-right: 10px;
-            width: 200px;
+            width: 180px;
         }
         table {
             width: 100%;
@@ -52,6 +52,14 @@
             color: #fff;
             border: none;
             border-radius: 4px;
+        }
+        .checkbox-group, .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .checkbox-group label, .radio-group label {
+            width: 150px;
+            margin-right: 20px;
         }
     </style>
 </head>
@@ -86,44 +94,187 @@
                 <!-- 儀器 -->
                 <tr>
                     <td>
-                        <label for="instrumentA">儀器</label>
                         <select id="instrumentA" name="instrumentA">
                             <option value="532">532</option>
                             <option value="CO2">CO2</option>
-                            <!-- 添加更多選項 -->
+                            <option value="SOFT-C">SOFT-C</option>
+                            <option value="TF">TF</option>
+                            <option value="ROLLER">ROLLER</option>
+                            <option value="SOFT-F">SOFT-F</option>
+                            <option value="雙機">雙機</option>
+                            <option value="PICO">PICO</option>
+                            <option value="BL">BL</option>
+                            <option value="CF">CF</option>
+                            <option value="RFE">RFE</option>
+                            <option value="RF">RF</option>
+                            <option value="UF/HF">UF/HF</option>
+                            <option value="RFB">RFB</option>
+                            <option value="IPL/755">IPL/755</option>
+                            <option value="其他">其他</option>
                         </select>
                     </td>
                     <td><input type="text" name="operator_instrumentA" placeholder="操作者"></td>
                     <td><input type="number" name="quantity_instrumentA"></td>
                     <td><input type="number" name="price_instrumentA"></td>
                 </tr>
-                <tr>
-                    <td>
-                        <select id="instrumentB" name="instrumentB">
-                            <option value="SOFT-C">SOFT-C</option>
-                            <option value="TF">TF</option>
-                            <!-- 添加更多選項 -->
-                        </select>
-                    </td>
-                    <td><input type="text" name="operator_instrumentB" placeholder="操作者"></td>
-                    <td><input type="number" name="quantity_instrumentB"></td>
-                    <td><input type="number" name="price_instrumentB"></td>
-                </tr>
                 <!-- 微整 -->
                 <tr>
                     <td>
-                        <label for="microA">微整</label>
                         <select id="microA" name="microA">
-                            <option value="BOTOX">BOTOX/NRN</option>
+                            <option value="BOTOX/NRN">BOTOX/NRN</option>
                             <option value="HA">HA</option>
-                            <!-- 添加更多選項 -->
+                            <option value="RDS+">RDS+</option>
+                            <option value="ELS">ELS</option>
+                            <option value="ELM">ELM</option>
+                            <option value="PLLA">PLLA</option>
+                            <option value="PRP">PRP</option>
+                            <option value="FAT">FAT</option>
+                            <option value="EXO">EXO</option>
+                            <option value="其他">其他</option>
                         </select>
                     </td>
                     <td><input type="text" name="operator_microA" placeholder="操作者"></td>
                     <td><input type="number" name="quantity_microA"></td>
                     <td><input type="number" name="price_microA"></td>
                 </tr>
-                <!-- 其他項目繼續添加類似結構 -->
+                <!-- 口服藥 -->
+                <tr>
+                    <td>
+                        <select id="oral_medA" name="oral_medA">
+                            <option value="OP">OP</option>
+                            <option value="ACNE">ACNE</option>
+                            <option value="ALLER1">ALLER1</option>
+                            <option value="HAIR">HAIR</option>
+                            <option value="WT">WT</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="operator_oral_medA" placeholder="操作者"></td>
+                    <td><input type="number" name="quantity_oral_medA"></td>
+                    <td><input type="number" name="price_oral_medA"></td>
+                </tr>
+                <!-- 針劑 -->
+                <tr>
+                    <td>
+                        <select id="injectionA" name="injectionA">
+                            <option value="ALLER2">ALLER2</option>
+                            <option value="INF">INF</option>
+                            <option value="KA">KA</option>
+                            <option value="WTF">WTF</option>
+                            <option value="WT3">WT3</option>
+                            <option value="WT4">WT4</option>
+                            <option value="CLE">CLE</option>
+                            <option value="FAT">FAT</option>
+                            <option value="BKR">BKR</option>
+                            <option value="PEN">PEN</option>
+                            <option value="HYA">HYA</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="operator_injectionA" placeholder="操作者"></td>
+                    <td><input type="number" name="quantity_injectionA"></td>
+                    <td><input type="number" name="price_injectionA"></td>
+                </tr>
+                <!-- 藥膏 -->
+                <tr>
+                    <td>
+                        <select id="ointmentA" name="ointmentA">
+                            <option value="OC">OC</option>
+                            <option value="OB">OB</option>
+                            <option value="OCG">OCG</option>
+                            <option value="M1">M1</option>
+                            <option value="NKC">NKC</option>
+                            <option value="EMO">EMO</option>
+                            <option value="EMU">EMU</option>
+                            <option value="SSD">SSD</option>
+                            <option value="DUOD">DUOD</option>
+                            <option value="ECO">ECO</option>
+                            <option value="3M tape">3M tape</option>
+                            <option value="諮詢費">諮詢費</option>
+                            <option value="診斷書">診斷書</option>
+                            <option value="病歷副本">病歷副本</option>
+                            <option value="護理包">護理包</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="operator_ointmentA" placeholder="操作者"></td>
+                    <td><input type="number" name="quantity_ointmentA"></td>
+                    <td><input type="number" name="price_ointmentA"></td>
+                </tr>
+                <!-- 護膚 -->
+                <tr>
+                    <td>
+                        <select id="skin_careA" name="skin_careA">
+                            <option value="SC">SC</option>
+                            <option value="MB">MB</option>
+                            <option value="GB">GB</option>
+                            <option value="VB">VB</option>
+                            <option value="SB">SB</option>
+                            <option value="AB">AB</option>
+                            <option value="MSPA">MSPA</option>
+                            <option value="GSPA">GSPA</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="operator_skin_careA" placeholder="操作者"></td>
+                    <td><input type="number" name="quantity_skin_careA"></td>
+                    <td><input type="number" name="price_skin_careA"></td>
+                </tr>
+                <!-- 產品 -->
+                <tr>
+                    <td>
+                        <select id="productA" name="productA">
+                            <option value="PREMO">PREMO</option>
+                            <option value="PPF">PPF</option>
+                            <option value="PCL">PCL</option>
+                            <option value="PP">PP</option>
+                            <option value="PRT">PRT</option>
+                            <option value="PRI">PRI</option>
+                            <option value="PH">PH</option>
+                            <option value="PM">PM</option>
+                            <option value="PO">PO</option>
+                            <option value="PRM">PRM</option>
+                            <option value="PG">PG</option>
+                            <option value="禮盒">禮盒</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="operator_productA" placeholder="操作者"></td>
+                    <td><input type="number" name="quantity_productA"></td>
+                    <td><input type="number" name="price_productA"></td>
+                </tr>
+                <!-- 塑衣 -->
+                <tr>
+                    <td>
+                        <select id="clothesA" name="clothesA">
+                            <option value="腰">腰</option>
+                            <option value="髖">髖</option>
+                            <option value="膝">膝</option>
+                            <option value="頸">頸</option>
+                            <option value="顎頸">顎頸</option>
+                            <option value="顳顎">顳顎</option>
+                            <option value="胸帶">胸帶</option>
+                            <option value="胸衣">胸衣</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="operator_clothesA" placeholder="操作者"></td>
+                    <td><input type="number" name="quantity_clothesA"></td>
+                    <td><input type="number" name="price_clothesA"></td>
+                </tr>
+                <!-- 手術 -->
+                <tr>
+                    <td><input type="text" name="surgeryA" placeholder="手術"></td>
+                    <td><input type="text" name="operator_surgeryA" placeholder="操作者"></td>
+                    <td><input type="number" name="quantity_surgeryA"></td>
+                    <td><input type="number" name="price_surgeryA"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="surgeryB" placeholder="手術"></td>
+                    <td><input type="text" name="operator_surgeryB" placeholder="操作者"></td>
+                    <td><input type="number" name="quantity_surgeryB"></td>
+                    <td><input type="number" name="price_surgeryB"></td>
+                </tr>
                 <!-- 最後 -->
                 <tr>
                     <td>現金</td>
