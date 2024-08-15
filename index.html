@@ -3,21 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>簡易點菜系統</title>
+    <title>儀器選擇系統</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>餐廳點菜系統</h1>
+    <h1>儀器選擇系統</h1>
     <form id="order-form">
-        <div class="menu-item">
-            <label for="dish1">炒飯 - $10</label>
-            <input type="number" id="dish1-qty" name="dish1-qty" min="0" value="0">
+        <div class="order-item">
+            <label for="instrument1">儀器</label>
+            <select id="instrument1">
+                <option value="532">532</option>
+                <option value="CO2">CO2</option>
+                <option value="SOFT-C">SOFT-C</option>
+                <option value="TF">TF</option>
+                <option value="ROLLER">ROLLER</option>
+                <option value="SOFT-F">SOFT-F</option>
+                <option value="雙機">雙機</option>
+                <option value="PICO">PICO</option>
+                <option value="BL">BL</option>
+                <option value="CF">CF</option>
+                <option value="RFE">RFE</option>
+                <option value="RF">RF</option>
+                <option value="UF / HF">UF / HF</option>
+                <option value="RFB">RFB</option>
+                <option value="IPL / 755">IPL / 755</option>
+            </select>
+
+            <label for="quantity1">數量</label>
+            <input type="number" id="quantity1" min="1" value="1">
+
+            <label for="price1">金額</label>
+            <input type="number" id="price1" min="0" value="0">
         </div>
-        <div class="menu-item">
-            <label for="dish2">麵條 - $8</label>
-            <input type="number" id="dish2-qty" name="dish2-qty" min="0" value="0">
-        </div>
-        <!-- 可以繼續添加更多菜品 -->
+        <!-- 可以繼續添加更多儀器項目 -->
         <button type="button" onclick="generateReceipt()">生成收據</button>
     </form>
     <div id="receipt"></div>
