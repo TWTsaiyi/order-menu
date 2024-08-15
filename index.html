@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
             margin: 20px;
         }
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
             background-color: #fff;
@@ -25,6 +25,7 @@
             padding: 8px;
             text-align: left;
             border: 1px solid #ddd;
+            vertical-align: top;
         }
         h1 {
             text-align: center;
@@ -53,46 +54,67 @@
 </head>
 <body>
     <div class="container">
-        <h1>菜單表單</h1>
+        <h1>對帳單表單</h1>
         <form id="menuForm">
             <table>
                 <tr>
-                    <th>儀器</th>
+                    <th>項目</th>
                     <th>操作手</th>
                     <th>數量</th>
                     <th>金額</th>
+                    <th>口服藥</th>
                     <th>針劑</th>
                     <th>操作手</th>
                     <th>數量</th>
                     <th>金額</th>
+                    <th>護膚</th>
                     <th>產品</th>
-                    <th>操作手</th>
-                    <th>數量</th>
-                    <th>金額</th>
-                    <th>藥劑</th>
-                    <th>操作手</th>
-                    <th>數量</th>
-                    <th>金額</th>
+                    <th>塑衣</th>
+                    <th>備註</th>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" id="532" name="instrument[]" value="532"> 532</td>
+                    <td>
+                        <input type="checkbox" id="532" name="instrument[]" value="532"> 532<br>
+                        <input type="checkbox" id="CO2" name="instrument[]" value="CO2"> CO2<br>
+                        <input type="checkbox" id="SOFT-C" name="instrument[]" value="SOFT-C"> SOFT-C<br>
+                        <!-- 繼續添加其他選項 -->
+                    </td>
                     <td><input type="text" name="operator_instrument[]"></td>
                     <td><input type="number" name="quantity_instrument[]"></td>
                     <td><input type="number" name="price_instrument[]"></td>
-                    <td><input type="checkbox" id="ALLER2" name="injection[]" value="ALLER2"> ALLER2</td>
+                    <td>
+                        <input type="checkbox" id="OP" name="oral_med[]" value="OP"> OP<br>
+                        <input type="checkbox" id="ACNE" name="oral_med[]" value="ACNE"> ACNE<br>
+                        <!-- 繼續添加其他選項 -->
+                    </td>
+                    <td>
+                        <input type="checkbox" id="ALLER2" name="injection[]" value="ALLER2"> ALLER2<br>
+                        <input type="checkbox" id="INF" name="injection[]" value="INF"> INF<br>
+                        <!-- 繼續添加其他選項 -->
+                    </td>
                     <td><input type="text" name="operator_injection[]"></td>
                     <td><input type="number" name="quantity_injection[]"></td>
                     <td><input type="number" name="price_injection[]"></td>
-                    <td><input type="checkbox" id="PREMO" name="product[]" value="PREMO"> PREMO</td>
-                    <td><input type="text" name="operator_product[]"></td>
-                    <td><input type="number" name="quantity_product[]"></td>
-                    <td><input type="number" name="price_product[]"></td>
-                    <td><input type="checkbox" id="IOC" name="medicine[]" value="IOC"> IOC</td>
-                    <td><input type="text" name="operator_medicine[]"></td>
-                    <td><input type="number" name="quantity_medicine[]"></td>
-                    <td><input type="number" name="price_medicine[]"></td>
+                    <td>
+                        <input type="checkbox" id="SC" name="skin_care[]" value="SC"> SC<br>
+                        <input type="checkbox" id="MB" name="skin_care[]" value="MB"> MB<br>
+                        <!-- 繼續添加其他選項 -->
+                    </td>
+                    <td>
+                        <input type="checkbox" id="PREMO" name="product[]" value="PREMO"> PREMO<br>
+                        <input type="checkbox" id="PPF" name="product[]" value="PPF"> PPF<br>
+                        <!-- 繼續添加其他選項 -->
+                    </td>
+                    <td>
+                        <input type="checkbox" id="腰" name="clothes[]" value="腰"> 腰<br>
+                        <input type="checkbox" id="膝" name="clothes[]" value="膝"> 膝<br>
+                        <!-- 繼續添加其他選項 -->
+                    </td>
+                    <td>
+                        <textarea name="remarks" rows="4" cols="20"></textarea>
+                    </td>
                 </tr>
-                <!-- 這裡應該繼續添加其他選項 -->
+                <!-- 可以繼續添加更多行來覆蓋所有表單選項 -->
             </table>
             <button type="submit" class="submit-btn">提交</button>
         </form>
