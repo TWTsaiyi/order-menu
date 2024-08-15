@@ -9,7 +9,7 @@ h1 {
     text-align: center;
 }
 
-.menu-item {
+.order-item {
     margin-bottom: 15px;
 }
 
@@ -17,8 +17,9 @@ label {
     margin-right: 10px;
 }
 
-input[type="number"] {
-    width: 50px;
+input[type="number"], select {
+    margin-right: 20px;
+    padding: 5px;
 }
 
 #receipt {
@@ -26,4 +27,13 @@ input[type="number"] {
     background-color: #fff;
     padding: 20px;
     border: 1px solid #ddd;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
 }
