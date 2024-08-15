@@ -1,13 +1,22 @@
 function generateReceipt() {
     console.log("Generate Receipt function triggered.");
 
-    const instrument1 = document.getElementById("instrument1").value;
+    const instrumentElement = document.getElementById("instrument1");
+    const quantityElement = document.getElementById("quantity1");
+    const priceElement = document.getElementById("price1");
+
+    // 檢查是否有任何元素未找到
+    if (!instrumentElement || !quantityElement || !priceElement) {
+        console.error("One or more elements are missing in the DOM.");
+        return;
+    }
+
+    const instrument1 = instrumentElement.value;
+    const quantity1 = quantityElement.value;
+    const price1 = priceElement.value;
+
     console.log("Selected instrument:", instrument1);
-
-    const quantity1 = document.getElementById("quantity1").value;
     console.log("Selected quantity:", quantity1);
-
-    const price1 = document.getElementById("price1").value;
     console.log("Entered price:", price1);
 
     if (quantity1 > 0 && price1 > 0) {
@@ -23,4 +32,13 @@ function generateReceipt() {
     } else {
         console.log("Invalid quantity or price.");
     }
+}
+
+function printReceipt() {
+    const receiptContent = document.getElementById("receipt").innerHTML;
+    const originalContent = document.body.innerHTML;
+
+    document.body.innerHTML = receiptContent;
+    window.print();
+    document.body.innerHTML = originalContent;
 }
