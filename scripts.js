@@ -18,10 +18,18 @@ function generateReceipt() {
 }
 
 function printReceipt() {
-    const receiptContent = document.getElementById("receipt").innerHTML;
-    const originalContent = document.body.innerHTML;
+    // 隱藏其他元素
+    document.getElementById("order-form").style.display = "none";
+    document.querySelector("h1").style.display = "none";
+    document.querySelector("button[onclick='generateReceipt()']").style.display = "none";
+    document.querySelector("button[onclick='printReceipt()']").style.display = "none";
 
-    document.body.innerHTML = receiptContent;
+    // 打印收據
     window.print();
-    document.body.innerHTML = originalContent;
+
+    // 打印後顯示其他元素
+    document.getElementById("order-form").style.display = "block";
+    document.querySelector("h1").style.display = "block";
+    document.querySelector("button[onclick='generateReceipt()']").style.display = "inline-block";
+    document.querySelector("button[onclick='printReceipt()']").style.display = "inline-block";
 }
