@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.menu-item {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input[type="number"] {
+    width: 50px;
+}
+
+#receipt {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
