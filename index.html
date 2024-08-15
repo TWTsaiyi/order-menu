@@ -3,11 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>點菜單</title>
+    <title>菜單表單</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #fdf5e6;
             margin: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
         }
         label {
             margin-top: 10px;
@@ -18,41 +39,70 @@
             padding: 8px;
             margin-top: 5px;
         }
-        button {
+        .submit-btn {
             margin-top: 20px;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
-    <h1>點菜單</h1>
-    <form id="orderForm">
-        <label for="dishName">菜名:</label>
-        <input type="text" id="dishName" name="dishName" required>
-
-        <label for="quantity">數量:</label>
-        <input type="number" id="quantity" name="quantity" required min="1">
-
-        <button type="button" onclick="printOrder()">列印</button>
-    </form>
-
+    <div class="container">
+        <h1>菜單表單</h1>
+        <form id="menuForm">
+            <table>
+                <tr>
+                    <th>儀器</th>
+                    <th>操作手</th>
+                    <th>數量</th>
+                    <th>金額</th>
+                    <th>針劑</th>
+                    <th>操作手</th>
+                    <th>數量</th>
+                    <th>金額</th>
+                    <th>產品</th>
+                    <th>操作手</th>
+                    <th>數量</th>
+                    <th>金額</th>
+                    <th>藥劑</th>
+                    <th>操作手</th>
+                    <th>數量</th>
+                    <th>金額</th>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="532" name="instrument[]" value="532"> 532</td>
+                    <td><input type="text" name="operator_instrument[]"></td>
+                    <td><input type="number" name="quantity_instrument[]"></td>
+                    <td><input type="number" name="price_instrument[]"></td>
+                    <td><input type="checkbox" id="ALLER2" name="injection[]" value="ALLER2"> ALLER2</td>
+                    <td><input type="text" name="operator_injection[]"></td>
+                    <td><input type="number" name="quantity_injection[]"></td>
+                    <td><input type="number" name="price_injection[]"></td>
+                    <td><input type="checkbox" id="PREMO" name="product[]" value="PREMO"> PREMO</td>
+                    <td><input type="text" name="operator_product[]"></td>
+                    <td><input type="number" name="quantity_product[]"></td>
+                    <td><input type="number" name="price_product[]"></td>
+                    <td><input type="checkbox" id="IOC" name="medicine[]" value="IOC"> IOC</td>
+                    <td><input type="text" name="operator_medicine[]"></td>
+                    <td><input type="number" name="quantity_medicine[]"></td>
+                    <td><input type="number" name="price_medicine[]"></td>
+                </tr>
+                <!-- 這裡應該繼續添加其他選項 -->
+            </table>
+            <button type="submit" class="submit-btn">提交</button>
+        </form>
+    </div>
     <script>
-        function printOrder() {
-            const dishName = document.getElementById('dishName').value;
-            const quantity = document.getElementById('quantity').value;
-
-            if (dishName && quantity) {
-                const orderDetails = `菜名: ${dishName}\n數量: ${quantity}`;
-                console.log(orderDetails);
-
-                // 在這裡處理打印邏輯
-                window.print();
-            } else {
-                alert('請填寫所有字段');
-            }
-        }
+        document.getElementById('menuForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('表單已提交');
+            // 在這裡處理表單數據，例如發送到服務器或打印
+        });
     </script>
 </body>
 </html>
