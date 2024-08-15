@@ -1,4 +1,3 @@
-/* 常規樣式 */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -37,22 +36,4 @@ ul {
 
 li {
     margin-bottom: 10px;
-}
-
-/* 打印樣式 */
-@media print {
-    body * {
-        visibility: hidden;
-    }
-    
-    #receipt, #receipt * {
-        visibility: visible;
-    }
-    
-    #receipt {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-    }
 }
